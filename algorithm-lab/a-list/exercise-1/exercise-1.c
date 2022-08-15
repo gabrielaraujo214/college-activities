@@ -1,7 +1,4 @@
-// EN
 // Write a program that reads two numbers and prints the result of adding, subtracting, multiplying and dividing these numbers.
-// PT
-// Elabore um programa que leia dois números e imprima o resultado da soma, da subtração, da multiplicação e da divisão destes números.
 #include <stdio.h>
 
 int main()
