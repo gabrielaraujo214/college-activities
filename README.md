@@ -4,4 +4,4 @@
 My activities done during college.
 
 ## PT
-Minhas atividades feitas durante a faculdade.
+Minhas atividades realizadas durante a faculdade.
