@@ -1,11 +1,13 @@
-// Write a program that reads three integer values corresponding to the day, month and year of a date, indicating the number of days that have passed in that year and the number of days remaining in the year. Example for 01/15/2003 we have elapsed days = 15 and remaining days = 350. The program must consider that some years are leap years!
+// Write a program that reads three integer values corresponding to the day, month and year of a date, indicating the number of days that have passed in that year and the number of days remaining in the year. Example for 15/01/2003 we have elapsed days = 15 and remaining days = 350. The program must consider that some years are leap years!
 
 #include <stdio.h>
-#include <locale.h>
 
 int main()
 {
     int day, month, year, total_days, actual_days, difference, days_month, days_feb;
+
+    total_days = 365;
+    days_feb = 28;
 
     printf("Enter day: ");
     scanf("%i", &day);
@@ -16,10 +18,7 @@ int main()
     printf("Enter year: ");
     scanf("%i", &year);
 
-    total_days = 365;
-    days_feb = 28;
-
-    if ((year % 4 == 0 && year % 100 == 0) || year % 400 == 0)
+    if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
     {
         total_days = 366;
         days_feb = 29;
@@ -49,6 +48,16 @@ int main()
         days_month = 31 + days_feb + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31;
     else if (month == 12)
         days_month = 31 + days_feb + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30;
+
+    actual_days = day + days_month;
+
+    difference = total_days - actual_days;
+
+    printf("\n");
+
+    printf("Days passed: %i\n", actual_days);
+
+    printf("Days remaining: %i", difference);
 
     return 0;
 }

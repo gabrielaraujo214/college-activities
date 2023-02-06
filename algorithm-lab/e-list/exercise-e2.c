@@ -7,44 +7,41 @@
 // 4        Division
 
 #include <stdio.h>
-#include <locale.h>
 
-float calcular(float a, float b, int opcao);
+float calculate(float a, float b, int option);
 
 int main()
 {
-    setlocale(LC_ALL, "");
+    int num1, num2, option;
 
-    int num1, num2, opcao;
-
-    printf("Digite um número: ");
+    printf("Enter a number: ");
     scanf("%i", &num1);
 
-    printf("Digite outro número: ");
+    printf("Enter another number: ");
     scanf("%i", &num2);
 
-    printf("Digite a operação desejada:\n");
-    printf("1) Soma\n");
-    printf("2) Subtração\n");
-    printf("3) Multiplicação\n");
-    printf("4) Divisão\n");
+    printf("Enter desired operation:\n");
+    printf("1) Sum\n");
+    printf("2) Subtraction\n");
+    printf("3) Multiplication\n");
+    printf("4) Division\n");
 
-    printf("Opção: ");
-    scanf("%i", &opcao);
+    printf("Option: ");
+    scanf("%i", &option);
 
-    if (opcao < 1 || opcao > 4)
-        printf("Opcão não existente!");
-    else if (opcao == 4 && num2 == 0)
-        printf("Não é possível dividir por zero!");
+    if (option < 1 || option > 4)
+        printf("Optuion not existent!");
+    else if (option == 4 && num2 == 0)
+        printf("Can't divide by zero!");
     else
-        printf("Resultado: %f", calcular(num1, num2, opcao));
+        printf("Result: %f", calculate(num1, num2, option));
 
     return 0;
 }
 
-float calcular(float a, float b, int opcao)
+float calculate(float a, float b, int option)
 {
-    switch (opcao)
+    switch (option)
     {
     case 1:
         return a + b;
